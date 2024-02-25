@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true samuelsalomonv/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t samuelsalomonv/multi-fibo-client /client
-  - docker build -t samuelsalomonv/multi-fibo-nginx /nginx
-  - docker build -t samuelsalomonv/multi-fibo-server /server
-  - docker build -t samuelsalomonv/multi-fibo-worker /worker
+  - docker build -t samuelsalomonv/multi-fibo-client ./client
+  - docker build -t samuelsalomonv/multi-fibo-nginx ./nginx
+  - docker build -t samuelsalomonv/multi-fibo-server ./server
+  - docker build -t samuelsalomonv/multi-fibo-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"--password-stdin
   # Take those images and push them to docker hub
