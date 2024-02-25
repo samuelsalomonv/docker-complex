@@ -17,8 +17,8 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"--password-stdin
   # Take those images and push them to docker hub
-  - docker push samuelsalomonv/multi-client
-  - docker push samuelsalomonv/multi-nginx
-  - docker push samuelsalomonv/multi-server
-  - docker push samuelsalomonv/multi-worker
+  - docker push samuelsalomonv/multi-fibo-client
+  - docker push samuelsalomonv/multi-fibo-nginx
+  - docker push samuelsalomonv/multi-fibo-server
+  - docker push samuelsalomonv/multi-fibo-worker
 
